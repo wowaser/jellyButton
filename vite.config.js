@@ -4,4 +4,7 @@ import mkcert from 'vite-plugin-mkcert'
 
 export default defineConfig({
   plugins: [typegpuPlugin(),mkcert()],
+  build: {
+    target: 'es2022',
+  },
 });

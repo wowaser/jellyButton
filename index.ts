@@ -61,7 +61,6 @@ const JELLY_COLOR: [number, number, number] = [0.08, 0.5, 1]; // RGB values 0-1
 const DARK_MODE = true; // true or false
 
 // Execute example
-// @ts-expect-error
 const example = await import('./src/index.ts');
 
 // Apply hardcoded control values
@@ -71,18 +70,8 @@ if (example.controls) {
     example.controls.Quality.onSelectChange(QUALITY);
   }
   
-  // Apply Light Direction
-  if (example.controls['Light dir']?.onSliderChange) {
-    example.controls['Light dir'].onSliderChange(LIGHT_DIR);
-  }
-  
-  // Apply Jelly Color
-  if (example.controls['Jelly Color']?.onColorChange) {
-    example.controls['Jelly Color'].onColorChange(JELLY_COLOR);
-  }
-  
-  // Apply Dark Mode
-  if (example.controls['Dark Mode']?.onToggleChange) {
-    example.controls['Dark Mode'].onToggleChange(DARK_MODE);
-  }
+	example.controls['Light dir'].onSliderChange(LIGHT_DIR);
+	example.controls['Jelly Color'].onColorChange(JELLY_COLOR);
+	example.controls['Dark Mode'].onToggleChange(DARK_MODE);
 }
+

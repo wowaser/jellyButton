@@ -414,7 +414,7 @@ const renderBackground = (
   const sideBounceLight = jellyColor.xyz
     .mul((1 / (sqDist * 40 + 1)) * 0.3)
     .mul(std.abs(newNormal.z));
-  const emission = std.saturate(1) * 1.5 + 0.7;
+  const emission = std.smoothstep(0.7, 1, state.posY) * 2 + 0.
 
   const litColor = calculateLighting(hitPosition, newNormal, rayOrigin);
   const backgroundColor = applyAO(
